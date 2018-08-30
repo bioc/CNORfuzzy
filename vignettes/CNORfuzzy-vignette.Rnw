@@ -102,8 +102,9 @@ dependencies if you start from scratch (i.e, none of the R packages are
 installed on your system). Then, you can install \emph{CNORfuzzy} similarly:
 
 <<installCNORfuzzy, eval=FALSE>>=
-source("http://bioconductor.org/biocLite.R")
-biocLite("CNORfuzzy")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("CNORfuzzy")
 @
 
 
